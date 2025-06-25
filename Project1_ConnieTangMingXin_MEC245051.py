@@ -51,6 +51,8 @@ MATRIC NUMBER: MEC245051
         # - Jupyter Notebook
         # - Python
         # - pandas, matplotlib, seaborn, scikit-learn, xgboost
+    
+    # GitHub: https://github.com/CTMX-Zhen/Project_1_bank_additional_CTMX
         
 """
     STUDENT'S OUTCOMES
