@@ -1,0 +1,24 @@
+[Manual Tuning Model]
+ROC AUC: 0.9438
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.94      0.96      0.95       734
+           1       0.60      0.46      0.52        90
+
+    accuracy                           0.91       824
+   macro avg       0.77      0.71      0.73       824
+weighted avg       0.90      0.91      0.90       824
+
+
+[Grid SearchCV Model]
+ROC AUC: 0.9432
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.98      0.95       734
+           1       0.68      0.40      0.50        90
+
+    accuracy                           0.91       824
+   macro avg       0.80      0.69      0.73       824
+weighted avg       0.90      0.91      0.90       824

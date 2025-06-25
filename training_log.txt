@@ -1,0 +1,105 @@
+2025-06-22 01:40:51,125 - INFO - Starting progress with log logged...
+2025-06-22 01:40:51,135 - INFO - First 5 rows of the dataset:
+2025-06-22 01:40:51,145 - INFO - 
+   age          job  marital          education default  housing     loan  ...     poutcome emp.var.rate cons.price.idx  cons.conf.idx  euribor3m  nr.employed   y
+0   30  blue-collar  married           basic.9y      no      yes       no  ...  nonexistent         -1.8         92.893          -46.2      1.313       5099.1  no
+1   39     services   single        high.school      no       no       no  ...  nonexistent          1.1         93.994          -36.4      4.855       5191.0  no
+2   25     services  married        high.school      no      yes       no  ...  nonexistent          1.4         94.465          -41.8      4.962       5228.1  no
+3   38     services  married           basic.9y      no  unknown  unknown  ...  nonexistent          1.4         94.465          -41.8      4.959       5228.1  no
+4   47       admin.  married  university.degree      no      yes       no  ...  nonexistent         -0.1         93.200          -42.0      4.191       5195.8  no
+
+[5 rows x 21 columns]
+2025-06-22 01:40:51,150 - INFO - (4119, 21)
+2025-06-22 01:40:51,150 - INFO - Number of missing values in each column:
+2025-06-22 01:40:51,152 - INFO - 
+age               0
+job               0
+marital           0
+education         0
+default           0
+housing           0
+loan              0
+contact           0
+month             0
+day_of_week       0
+duration          0
+campaign          0
+pdays             0
+previous          0
+poutcome          0
+emp.var.rate      0
+cons.price.idx    0
+cons.conf.idx     0
+euribor3m         0
+nr.employed       0
+y                 0
+dtype: int64
+2025-06-22 01:40:51,153 - INFO - Categorical columns:
+- job
+- marital
+- education
+- default
+- housing
+- loan
+- contact
+- month
+- day_of_week
+- poutcome
+- y
+2025-06-22 01:40:51,189 - INFO - Logistic Regression Performance:
+2025-06-22 01:40:51,193 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.93      0.98      0.96       734
+           1       0.75      0.43      0.55        90
+
+    accuracy                           0.92       824
+   macro avg       0.84      0.71      0.75       824
+weighted avg       0.91      0.92      0.91       824
+
+2025-06-22 01:40:51,195 - INFO - ROC AUC: 0.9319
+
+2025-06-22 01:40:53,623 - INFO - XGBoost Performance:
+2025-06-22 01:40:53,627 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.94      0.96      0.95       734
+           1       0.61      0.51      0.55        90
+
+    accuracy                           0.91       824
+   macro avg       0.77      0.74      0.75       824
+weighted avg       0.90      0.91      0.91       824
+
+2025-06-22 01:40:53,630 - INFO - ROC AUC: 0.9271
+
+2025-06-22 01:40:55,809 - INFO - Starting manual fine tune by best score and best parameters...
+2025-06-22 01:40:58,123 - INFO - Best ROC AUC: 0.9438 with params: {'n_estimators': 100, 'max_depth': 3, 'learning_rate': 0.1, 'subsample': 0.8}
+2025-06-22 01:40:58,177 - INFO - Manually Tuned XGBoost Performance:
+2025-06-22 01:40:58,182 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.94      0.96      0.95       734
+           1       0.60      0.46      0.52        90
+
+    accuracy                           0.91       824
+   macro avg       0.77      0.71      0.73       824
+weighted avg       0.90      0.91      0.90       824
+
+2025-06-22 01:40:58,184 - INFO - ROC AUC (Manual Best): 0.9438
+
+2025-06-22 01:41:00,725 - INFO - Starting manual fine tune by Grid Search...
+2025-06-22 01:41:07,015 - INFO - Best parameters found: {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 200, 'subsample': 0.8}
+2025-06-22 01:41:07,024 - INFO - Tuned XGBoost Performance:
+2025-06-22 01:41:07,029 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.93      0.98      0.95       734
+           1       0.68      0.40      0.50        90
+
+    accuracy                           0.91       824
+   macro avg       0.80      0.69      0.73       824
+weighted avg       0.90      0.91      0.90       824
+
+2025-06-22 01:41:07,031 - INFO - ROC AUC: 0.9432
+
+2025-06-22 01:41:09,657 - INFO - Final model summary saved to final_model_summary.txt
